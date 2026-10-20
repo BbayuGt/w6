@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import LabelHarga from './LabelHarga'
 
-export default function KartuMenu({kategori, harga, nama}) {
+export default function KartuMenu({hapus, id, kategori, harga, nama}) {
     const [jumlah, setJumlah] = useState(0);
     const [note, setNote] = useState("")
     kategori = kategori === undefined ? "Makanan" : kategori
@@ -23,5 +23,7 @@ export default function KartuMenu({kategori, harga, nama}) {
         <p>Catatan: {note}</p>
 
         <LabelHarga harga={harga.toLocaleString()}/>
+
+        <button onClick={hapus(id)}>Hapus</button>
     </div>
 }
